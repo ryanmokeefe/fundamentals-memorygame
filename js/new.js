@@ -8,27 +8,38 @@ var cards = [
 
 var cardsInPlay = [ ]
 
-var cardOne = cards[2]
+// (unit 9) ONE FUNCTION TO CHECK LOGIC
 
-var cardTwo = cards[3]
+var checkMatch = function() {
 
-// Add flipped cards to cardsInPlay
+        // Check for length and match
 
-cardsInPlay.push(cardOne)
-cardsInPlay.push(cardTwo)
-
-console.log('User flipped ' + cardsInPlay)
-
-// Check for length and match
-
-if (cardsInPlay.length === 2) {
-    if (cardsInPlay[0] === cardsInPlay[1]) {
-        alert('You found a match!')
-    } else {
-        alert('Sorry, try again.')
-    }
+        if (cardsInPlay.length === 2) {
+            if (cardsInPlay[0] === cardsInPlay[1]) {
+                alert('You found a match!')
+            } 
+            else {
+                alert('Sorry, try again.')
+            }
+        }
 }
 
+// (unit 9) ONE FUNCTION TO SELECT/FLIP CARDS
+
+var flipcard = function(cardId) {
+
+    console.log('User flipped ' + cards[cardId])
+
+    // Add flipped cards to cardsInPlay
+
+    cardsInPlay.push(cards[cardId])
+
+    checkMatch()
+    
+}
+
+flipcard(0)
+flipcard(1)
 
 // ALERT USER OF RESULTS:
 
