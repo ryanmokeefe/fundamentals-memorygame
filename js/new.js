@@ -47,6 +47,17 @@ var cards = [
 
 var cardsInPlay = []
 
+// Score
+
+var score = document.getElementsByClassName('score')
+var points = 0
+
+ // add to score
+ var upScore = function() {
+    points += 10
+    score[0].innerHTML = points
+}
+
 // (unit 9) ONE FUNCTION TO CHECK LOGIC
 
 var checkMatch = function() {
@@ -55,7 +66,9 @@ var checkMatch = function() {
 
         if (cardsInPlay.length === 2) {
             if (cardsInPlay[0] === cardsInPlay[1]) {
+                upScore()
                 alert('You found a match!')
+
             } 
             else {
                 alert('Sorry, try again.')
@@ -112,30 +125,15 @@ createBoard()
 
 var reset = document.getElementsByTagName('button')[0]
 
- /*   var resetGame = function() {
-        // get board
-        var board = document.getElementById('game-board')
-        // clear board
-        board.innerHTML = null
-        // run createBoard
-        createBoard()
-
-    }
-*/
 reset.addEventListener('click', function() {
     // get board
     var board = document.getElementById('game-board')
     // clear board
     board.innerHTML = null
+    // clear score
+    points = 0
+    score[0].innerHTML = points
     // run createBoard
     createBoard()
 
 })
-
-// add to score **move to top later
-
-var score = document.getElementsByClassName('score')[0]
-
-function() {
-
-}
