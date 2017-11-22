@@ -1,40 +1,46 @@
+// CARDS:
 
-// global variables
+var cards = [
+    'queen', 'queen', 'king', 'king'
+]
 
-var cards = [ "queen", "queen", "king", "king"]
-
-// var cardOne = cards[0]
-
-// var cardTwo = cards[1]
+// User's cards that are Flipped
 
 var cardsInPlay = [ ]
-////////
 
-function flipcard(cardId) {
-// add cards to cardsInPlay
+// (unit 9) ONE FUNCTION TO CHECK LOGIC
+
+var checkMatch = function() {
+
+        // Check for length and match
+
+        if (cardsInPlay.length === 2) {
+            if (cardsInPlay[0] === cardsInPlay[1]) {
+                alert('You found a match!')
+            } 
+            else {
+                alert('Sorry, try again.')
+            }
+        }
+}
+
+// (unit 9) ONE FUNCTION TO SELECT/FLIP CARDS
+
+var flipcard = function(cardId) {
+
+    console.log('User flipped ' + cards[cardId])
+
+    // Add flipped cards to cardsInPlay
 
     cardsInPlay.push(cards[cardId])
 
-    // check if 2 cards were flipped
-
-    if ( cardsInPlay.length === 2 ) {
-        if (cardsInPlay[0] === cardsInPlay[1]) {
-            alert("You found a match!")
-
-        } else {
-            alert("Sorry, try again.")
-
-        }
-
-    }
-
-    // alert user
-
-    // console.log("user flipped " + cardOne + " and " + cardTwo) 
-
-    console.log("user flipped " + cardId)
-
+    checkMatch()
+    
 }
 
-flipcard(cards[0])
-flipcard(cards[2])
+flipcard(0)
+flipcard(3)
+
+// ALERT USER OF RESULTS:
+
+// alert('User flipped ' + cardOne)
