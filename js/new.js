@@ -20,6 +20,26 @@ var cards = [
         rank: 'king',
         suit: 'diamonds',
         cardImage: "images/king-of-diamonds.png"
+    },
+    {
+        rank: 'queen',
+        suit: 'hearts',
+        cardImage: "images/queen-of-hearts.png"
+    },
+    {
+        rank: 'queen',
+        suit: 'diamonds',
+        cardImage: "images/queen-of-diamonds.png"
+    },
+    {
+        rank: 'king',
+        suit: 'hearts',
+        cardImage: "images/king-of-hearts.png"
+    },
+    {
+        rank: 'king',
+        suit: 'diamonds',
+        cardImage: "images/king-of-diamonds.png"
     }
 ]
 
@@ -40,6 +60,8 @@ var checkMatch = function() {
             else {
                 alert('Sorry, try again.')
             }
+        // clear cardsInPlay
+        cardsInPlay = []
         }
 }
 
@@ -49,14 +71,16 @@ var flipcard = function() {
     // get data Id of flipped card
     var cardId = this.getAttribute('data-id');
 
-    console.log('User flipped ' + cards[cardId].rank + ' of ' + cards[cardId].suit)
+    // flip face of card
+    this.setAttribute('src', cards[cardId].cardImage)
 
     // Add flipped cards to cardsInPlay
 
     cardsInPlay.push(cards[cardId].rank)
 
-    // flip face of card
-    this.setAttribute('src', cards[cardId].cardImage)
+    console.log('User flipped ' + cards[cardId].rank + ' of ' + cards[cardId].suit)
+    
+
     // new if statement:
     if (cardsInPlay.length === 2) {
         checkMatch()
@@ -84,11 +108,34 @@ var createBoard = function() {
 
 createBoard()
 
+// RESET GAME BOARD
 
+var reset = document.getElementsByTagName('button')[0]
 
-// flipcard(3)
-// flipcard(2)
+ /*   var resetGame = function() {
+        // get board
+        var board = document.getElementById('game-board')
+        // clear board
+        board.innerHTML = null
+        // run createBoard
+        createBoard()
 
-// ALERT USER OF RESULTS:
+    }
+*/
+reset.addEventListener('click', function() {
+    // get board
+    var board = document.getElementById('game-board')
+    // clear board
+    board.innerHTML = null
+    // run createBoard
+    createBoard()
 
-// alert('User flipped ' + cardOne)
+})
+
+// add to score **move to top later
+
+var score = document.getElementsByClassName('score')[0]
+
+function() {
+
+}

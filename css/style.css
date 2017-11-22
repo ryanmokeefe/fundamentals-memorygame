@@ -68,6 +68,7 @@ p {
     font-family: "Droid Serif";
     line-height: 26px;
     font-size: 18px;
+    margin: 0 0 80px 0
 }
 
 footer { 
@@ -107,5 +108,42 @@ footer {
 .name {
     color: #f15b31;
     font-weight: 700;
+
+}
+
+.reset {
+    padding: 0;
+    margin: 10px auto;
+    height: 50px;
+    width: 150px;
+    color: #0D2C40;
+    border-radius: 20px;
+    border: 3px solid #0D2C40;
+    background-color: #f15b31;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.reset:hover {
+    border: 5px solid #0D2C40;
+    padding: 1px;
+    background-color: #00a6b3;
+    color: white;
+}
+
+.score-board {
+    border-top: 3px solid #f15b31;
+    margin: 20px;    
+    padding: 20px;
+    color: #0D2C40;
+    
+}
+
+.score {
+    font-size: 50px;
+    border-top: 3px solid #f15b31;
+    margin: 20px;    
+    padding: 20px;
 
 }
